@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "percy exec -- ./run-tests.sh",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "percy:cypress:open": "percy exec -- cypress open",
+    "percy:cypress:run": "percy exec -- cypress run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@percy/cypress": "^1.0.1",
+    "cypress": "^3.1.5",
+    "ws": "3.3.2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "video": false,
+    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 120000,
+    "baseUrl":"https://qa-sso.ncl.com/secureauth29",
+    "execTimeout": 120000,
+    "pageLoadTimeout": 120000,
+    "requestTimeout": 10000,
+    "responseTimeout": 60000
+}
