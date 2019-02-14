@@ -11,7 +11,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 Cypress.Cookies.defaults({
-  whitelist: ['JSESSIONID', 'NCLUser', 'NCLUserData', 'NCLUserDataSignature', 'ncl_redesign','Ncl_region','ak_location']
+  whitelist: ['JSESSIONID', 'NCLUser', 'NCLUserData', 'NCLUserDataSignature', 'ncl_redesign','Ncl_region','ak_location','NCL_LOCALE']
 })
 
 //Cypress.Cookies.debug(true)
