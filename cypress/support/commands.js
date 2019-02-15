@@ -22,13 +22,14 @@ Cypress.Commands.add('login', (userType, options = {}) => {
 })
 
 //Take a Percy snapshot conditionally by the environment
-Cypress.Commands.add('percySnapshot', (picture_name = '', options = {}) => {
+Cypress.Commands.add('percyShot', (picture_name = '', options = {}) => {
     if (environment.percyEnabled) {
         cy.percySnapshot(picture_name || helper.getGuid())
     }else{
         cy.log(`Screenshot not taken, because environment.percyEnabled is disabled!!`)
     }
 })
+
 
 //Open a modal take picture and close it again
 Cypress.Commands.add('checkVisibleModal', (trigger = '', modalSelector = '', options = {}) => {
@@ -37,7 +38,7 @@ Cypress.Commands.add('checkVisibleModal', (trigger = '', modalSelector = '', opt
         if (modalSelector) {
             cy.get(modalSelector).as('modal')
             cy.get('@modal').should('be.visible').then(($modal) => {
-                cy.percySnapshot()
+                cy.percyShot()
                 $modal.find('a[data-dismiss="modal"]').click()
             })
         }

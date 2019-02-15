@@ -31,12 +31,12 @@ const state={
         
     ]
 }
-describe("freestyle-cruise / prepare-for-your-cruise", () => {
+describe("Header pages", () => {
     state.pages.forEach((page)=>{
         it(page, () => {
             cy.visit(page)
             cy.url().should('contain', page)
-            cy.percySnapshot()
+            cy.percyShot(page.replace('/',''))
         })   
     })
 })

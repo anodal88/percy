@@ -37,7 +37,7 @@ describe('@percy/cypress', function () {
             //- visits the home page
             cy.visit(state.endpoint,{timeout:120000})
             //ScreenShot from the home page
-            //cy.percySnapshot('home_page')
+            cy.percyShot('home_page')
         })
 
         it("My Ncl have to be visible",function(){
@@ -45,7 +45,7 @@ describe('@percy/cypress', function () {
              //TODO emulate the hove at My Ncl
              cy.contains('View Account', { timeout: 60000 }).click({ force: true })
              //ScreenShot from the bge page
-             //cy.percySnapshot('bge_page')
+             cy.percyShot('bge_page')
         })
     })
  })
