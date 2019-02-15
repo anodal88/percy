@@ -1,4 +1,4 @@
 export const environment = {
-    percyEnabled: false,
+    percyEnabled: true,
     auth: { username: "bgesun", password: "ncl2011" }
 }
