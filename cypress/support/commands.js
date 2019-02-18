@@ -31,11 +31,3 @@ Cypress.Commands.add('percyShot', (picture_name = '', options = {}) => {
 })
 
 
-//Open a modal take picture and close it again
-Cypress.Commands.add('closeModalIfExist', (modalSelector = '', options = {}) => {
-    if (modalSelector) {
-        cy.get(modalSelector).should('be.visible').then(($modal) => {
-            $modal.find('a[data-dismiss="modal"]').click()
-        })
-    }
-})

@@ -4,7 +4,6 @@ describe("Footer / Events", () => {
     })
     it("Meetings & Incentives", () => {
         cy.contains('Meetings & Incentives').click()
-        cy.closeModalIfExist('#bootstrap_modal')
         cy.percyShot("footer_events")
     })
 })
