@@ -1,11 +1,10 @@
-describe("Footer / Events",()=>{
-    it("Meetings & Incentives",()=>{
-        cy.visit("/events",{timeout:50000})
-        cy.get('#bootstrap_modal').as('modal')
-        cy.get('@modal').should('be.visible')
-       .then(($modal)=>{
-           $modal.find('a[data-dismiss="modal"]').click()
-        })
-        cy.percyShot()
+describe("Footer / Events", () => {
+    it("Navigate to home page", () => {
+        cy.visit("/")
+    })
+    it("Meetings & Incentives", () => {
+        cy.contains('Meetings & Incentives').click()
+        cy.closeModalIfExist('#bootstrap_modal')
+        cy.percyShot("footer_events")
     })
 })

@@ -6,5 +6,5 @@
     "pageLoadTimeout": 120000,
     "requestTimeout": 10000,
     "responseTimeout": 60000,
-    "baseUrl":"https://local.ncl.com"
+    "baseUrl":"https://qa2-web.ncl.com"
 }
