@@ -1,8 +1,13 @@
 
 describe("Why Cruise Norwegian / Dining", () => {
 
+    it("Navigate to the home page", () => {
+        cy.visit("/")
+    })
+
     it("Visist Dining page", () => {
-        cy.visit('/why-cruise-norwegian/cruise-dining')
+        cy.get('.header_navigation a[href="/why-cruise-norwegian/cruise-dining"]')
+            .click({ force: true })
         cy.url().should('contain', 'cruise-dining')
         cy.percyShot('cruise-dining')
     })

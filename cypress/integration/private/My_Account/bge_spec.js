@@ -1,17 +1,3 @@
-var state = {
-    endpoint: '/',
-    username: 'bgesun',
-    password: 'ncl2011',
-    myNcl:'My NCL',
-    viewAccount:'View Account',
-    ssoUrl: 'qa-sso',
-    loginText: 'Log in',
-    loginBtnValue: 'Log In',
-    MyAccountText: "My Account",
-    bge_path:'my-account',
-}
-
-describe('@percy/cypress', function () {
     describe('BGE Page', function () {
 
         before(function () {
@@ -35,7 +21,7 @@ describe('@percy/cypress', function () {
 
         it("Visits the Home Page", function () {
             //- visits the home page
-            cy.visit(state.endpoint,{timeout:120000})
+            cy.visit("/",{timeout:120000})
             //ScreenShot from the home page
             cy.percyShot('home_page')
         })
@@ -48,4 +34,3 @@ describe('@percy/cypress', function () {
              cy.percyShot('bge_page')
         })
     })
- })

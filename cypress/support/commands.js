@@ -25,22 +25,17 @@ Cypress.Commands.add('login', (userType, options = {}) => {
 Cypress.Commands.add('percyShot', (picture_name = '', options = {}) => {
     if (environment.percyEnabled) {
         cy.percySnapshot(picture_name || helper.getGuid())
-    }else{
+    } else {
         cy.log(`Screenshot not taken, because environment.percyEnabled is disabled!!`)
     }
 })
 
 
 //Open a modal take picture and close it again
-Cypress.Commands.add('checkVisibleModal', (trigger = '', modalSelector = '', options = {}) => {
-    cy.get(trigger).then((link) => {
-        link.click()
-        if (modalSelector) {
-            cy.get(modalSelector).as('modal')
-            cy.get('@modal').should('be.visible').then(($modal) => {
-                cy.percyShot()
-                $modal.find('a[data-dismiss="modal"]').click()
-            })
-        }
-    })
+Cypress.Commands.add('closeModalIfExist', (modalSelector = '', options = {}) => {
+    if (modalSelector) {
+        cy.get(modalSelector).should('be.visible').then(($modal) => {
+            $modal.find('a[data-dismiss="modal"]').click()
+        })
+    }
 })
